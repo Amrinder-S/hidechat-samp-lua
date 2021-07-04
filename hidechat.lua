@@ -5,7 +5,7 @@ local sampev = require 'lib.samp.events'
 
 
 local hidden = inicfg.load ({
-  words = { "test1","test2" }
+  words = {  }
   
 }, 'hiddenchat.ini')
 
@@ -39,6 +39,26 @@ function main()
             end
         else
             sampAddChatMessage('[HideChat] /add [word / sentence] (For example: [Helpers])', 0xAFAFAF)
+        end
+    end)
+    sampRegisterChatCommand('show.words', function()
+        for k, v in pairs(hidden.words) do
+            sampAddChatMessage(string.format('[HideChat] {FFFFFF}[%s]{AFAFAF} %s', k, v), 0xAFAFAF)
+        end
+        sampAddChatMessage('[HideChat] {FFFFFF}To remove unnecessary use /remove.word', 0xAFAFAF)
+    end)
+
+    sampRegisterChatCommand('remove.word', function(arg)
+        if tonumber(arg) then
+            if tonumber(arg) >= 1 and tonumber(arg) <= #hidden.words then
+                sampAddChatMessage(string.format('[HideChat] {FFFFFF}"%s"{AFAFAF} removed from ignore list ', hidden.words[tonumber(arg)]), 0xAFAFAF)
+                table.remove(hidden.words, tonumber(arg))
+                inicfg.save(hidden, 'hiddenchat.ini')
+            else
+                sampAddChatMessage('[HideChat] There is no such number in the ignore list!', 0xAFAFAF)
+            end
+        else
+            sampAddChatMessage('[HideChat] Use /remove.word [number from /show.words]', 0xAFAFAF)
         end
     end)
 
