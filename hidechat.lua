@@ -1,5 +1,5 @@
 script_author('AMR')
-script_name('ChatID')
+script_name('HideChat')
 local inicfg = require 'inicfg'
 local sampev = require 'lib.samp.events'
 
