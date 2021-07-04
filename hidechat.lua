@@ -71,7 +71,7 @@ function sampev.onServerMessage(color, text)
 	for k, v in pairs(hidden.words) do
 			if string.find(text, v) then
 			file = io.open('moonloader/hiddenchat.txt', "a")
-			file:write("\n"..text)
+			file:write("\n"..text.."~^n^~")
 			file:close()
 			toChange = true
 			end
