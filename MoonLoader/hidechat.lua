@@ -38,7 +38,7 @@ function main()
                         sampAddChatMessage('[HideChat] "'..tostring(word)..'" will now be hidden', 0xAFAFAF)
                     end
                 else
-                sampAddChatMessage('[HideChat] /add [word / sentence] (For example: [Helpers])', 0xAFAFAF)
+                sampAddChatMessage('[HideChat] /add.new [word / sentence] (For example: [Helpers])', 0xAFAFAF)
             end
         end)
 

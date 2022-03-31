@@ -1,5 +1,14 @@
 # hidechat-samp-lua
-it hides the chat containing specific words and saves it to a text file, which can be viewed on second screen using an external app. 
+it hides the chat lines containing specific words and saves it to a text file.
+- Hidden lines are saved to a text file to be viewed later in case needed (inside Moonloader folder)
+- It automatically stops the repeated text messages (spam messages) so even if someone is spamming, you will be immune :)
+
+
+## Commands and usage
+- /add.new **to add a word to ignore list.**
+- /show.words **to show the ignore list.**
+- /remove.word **to remove a word from ignore list.**
+- /hidechat **To toggle ignore list on or off**
 
 ## Installation
 
